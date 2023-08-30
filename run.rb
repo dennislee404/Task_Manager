@@ -1,9 +1,9 @@
 require './user.rb'
 require './task.rb'
 require './checklist.rb'
+require './datamanager.rb'
 require 'colorize'
 
-@checklists = []
 
 def display_checklist
 	puts "\nChecklists:"
@@ -88,7 +88,13 @@ def loop_task(cl_index,task_index)
 	end
 end
 
+
+@checklists = DataManager.load_checklist('checklist.csv')
+
 puts "Welcome to Elevate Task Manager".green
+# load csv file
+# update @checklists = []
+# update @checklists[i].tasks = []
 
 loop do 
 	puts "\nWhat would you like to do?"
