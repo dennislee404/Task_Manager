@@ -1,14 +1,14 @@
 Checklist,Task,completed?
-Checklist 1,Task 1,FALSE
-Checklist 1,Task 2,FALSE
-Checklist 1,Task 3,FALSE
-Checklist 1,Task 4,FALSE
-Checklist 2,Task 1,FALSE
-Checklist 2,Task 2,FALSE
-Checklist 2,Task 3,FALSE
-Checklist 2,Task 4,FALSE
-Checklist 2,Task 5,FALSE
-Checklist 3,Task 1,FALSE
-Checklist 3,Task 2,FALSE
-Checklist 3,Task 3,FALSE
-Checklist 3,Task 4,FALSE
+Checklist 1,Task 1,false
+Checklist 1,Task 2,true
+Checklist 1,Task 3,false
+Checklist 1,Task 4,true
+Checklist 2,Task 1,true
+Checklist 2,Task 2,false
+Checklist 2,Task 3,true
+Checklist 2,Task 4,true
+Checklist 2,Task 5,false
+Checklist 3,Task 1,true
+Checklist 3,Task 2,true
+Checklist 3,Task 3,false
+Checklist 3,Task 4,false

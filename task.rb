@@ -8,9 +8,9 @@ class Task
 		@comments = []
 	end
 	
-	def complete_task
+	def complete_task(task_name)
 		@completed = true
-		puts 
+		puts "#{task_name} completed"
 	end
 
 	def completed?
