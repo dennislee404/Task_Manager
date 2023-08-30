@@ -3,16 +3,17 @@ class Checklist
 	def initialize(title)
 		@title = title
 		@tasks = []
-		puts "Checklist '#{title}' created"
+		puts "\nChecklist '#{title}' created"
 	end
 
 	def add_task(task_name)
 		task = Task.new(task_name)
 		@tasks << task
-		puts "'#{task.name}'' added to '#{@title}'"
+		puts "'#{task.name}' added to '#{@title}'"
 	end
 
 	def display_task
+		puts "\n#{@title}"
 		@tasks.each_with_index do |task, index|
 
 			if task.completed?
@@ -26,7 +27,7 @@ class Checklist
 	end
 
 	def delete_task(index)
-		puts "'#{tasks[index-1].name}'' deleted from '#{@title}'"
-		@tasks.delete_at(index-1)
+		puts "\n'#{tasks[index].name}' deleted from '#{@title}'"
+		@tasks.delete_at(index)
 	end
 end
