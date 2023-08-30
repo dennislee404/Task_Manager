@@ -1,22 +1,32 @@
 class Checklist
-	attr_reader :title, :pending_tasks, :completed_tasks
+	attr_reader :title, :tasks
 	def initialize(title)
 		@title = title
-		@pending_tasks = {}
-		@completed_tasks = []
+		@tasks = []
+		puts "Checklist '#{title}' created"
 	end
 
-	def add_task(name,due_date)
-		Task.new(name,due_date)
-		@pending_tasks[name] = due_date 
+	def add_task(task_name)
+		task = Task.new(task_name)
+		@tasks << task
+		puts "'#{task.name}'' added to '#{@title}'"
 	end
 
-	def complete_task(name)
-		@pending_tasks.delete(name)
-		@completed_tasks << name
+	def display_task
+		@tasks.each_with_index do |task, index|
+
+			if task.completed?
+				status = "[x]"
+			else
+				status = "[ ]"
+			end
+
+			puts "#{index + 1} - #{status} - #{task.name}"
+		end
 	end
 
-	def delete_task(name)
-		@pending_task.delete(name)
+	def delete_task(index)
+		puts "'#{tasks[index-1].name}'' deleted from '#{@title}'"
+		@tasks.delete_at(index-1)
 	end
 end
