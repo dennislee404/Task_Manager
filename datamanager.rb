@@ -48,10 +48,17 @@ class DataManager
 		end
 		checklists
 	end
+
+	def self.save_checklist(filename, checklist_database)
+		File.open(filename, "w+") do |file|
+			file.puts "Checklist,Task,completed?"
+			checklist_database.each do |checklist|
+				checklist.tasks.each do |task|
+					file.puts "#{checklist.title},#{task.name},#{task.completed?}"
+				end			
+			end
+		end
+	end
 end
 
 
-# if task_completed
-# 	checklists[i]tasks[i].complete_task
-# else
-# 	next

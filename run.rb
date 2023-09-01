@@ -73,7 +73,7 @@ def loop_task(cl_index,task_index)
 
 		case choice
 		when 1
-			@checklists[cl_index].tasks[task_index].complete_task
+			@checklists[cl_index].tasks[task_index].complete_task(@checklists[cl_index].tasks[task_index].name)
 
 		when 2
 			@checklists[cl_index].delete_task(task_index)
@@ -88,11 +88,12 @@ def loop_task(cl_index,task_index)
 	end
 end
 
+checklist_file = 'checklist.csv'
 
-@checklists = DataManager.load_checklist('checklist.csv')
+@checklists = DataManager.load_checklist(checklist_file)
 
 puts "Welcome to Elevate Task Manager".green
-# load csv file
+# load csv file 
 # update @checklists = []
 # update @checklists[i].tasks = []
 
@@ -126,6 +127,7 @@ loop do
 		end
 
 	when 0
+		DataManager.save_checklist(checklist_file,@checklists)
 		puts "Bye"
 		exit
 
